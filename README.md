@@ -60,6 +60,8 @@ Proceed      Block / Verify           │
 Blockchain   Additional Auth          │
 ```
 
+<img width="1917" height="972" alt="Screenshot 2026-09-18 015131" src="https://github.com/user-attachments/assets/f7655465-eb00-4f26-b81d-869264c7180e" />
+
 ---
 
 # 🧬 Digital DNA
@@ -81,6 +83,7 @@ Depending on the implementation and available data, DBPTBS can analyze signals s
 | 🌐 Session Context        | Contextual session characteristics      |
 
 These signals are combined rather than relying on a single indicator.
+<img width="1917" height="971" alt="Screenshot 2026-09-18 015326" src="https://github.com/user-attachments/assets/c706106e-c233-4a15-8456-4395101ae4eb" />
 
 ---
 
@@ -152,6 +155,7 @@ Contextual Deviation
                        ↓              ↓
                    Proceed         Block
 ```
+<img width="1916" height="971" alt="Screenshot 2026-09-18 015349" src="https://github.com/user-attachments/assets/7401727a-f3cf-41e0-a682-714ca18411d4" />
 
 ---
 
@@ -192,8 +196,9 @@ Verified Owner     Verification Failed
  ↓                     ↓
 Transaction          Transaction
 Allowed              Blocked
-```
 
+```
+<img width="1917" height="970" alt="Screenshot 2026-09-18 015421" src="https://github.com/user-attachments/assets/a7fcc5b9-8cfa-4cb2-8b4f-f0c793c47777" />
 ---
 
 # ⚡ What Makes DBPTBS Different?
