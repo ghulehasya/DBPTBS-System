@@ -479,8 +479,17 @@ DBPTBS aims to move blockchain transaction protection from **transaction-only ve
           SECURE EXECUTION
 ```
 
----
+--- 
+## 📸 Screen Shots
+<img width="1917" height="972" alt="Screenshot 2026-09-18 015131" src="https://github.com/user-attachments/assets/fe04ce52-228f-4df6-92c6-48f619559d2c" />
+<img width="1917" height="971" alt="Screenshot 2026-09-18 015326" src="https://github.com/user-attachments/assets/ea3e3f7d-6aa5-43ca-9f53-c80409e95920" />
+<img width="1916" height="971" alt="Screenshot 2026-09-18 015349" src="https://github.com/user-attachments/assets/1b876625-7b0d-48ed-9b27-01440e71316c" />
+<img width="1917" height="970" alt="Screenshot 2026-09-18 015421" src="https://github.com/user-attachments/assets/64cf694f-3b01-4569-9a37-a89ff5d11b67" />
+<img width="1917" height="971" alt="Screenshot 2026-09-18 015442" src="https://github.com/user-attachments/assets/e6e6f4d2-ecfc-4927-8f2a-760ba6422183" />
+<img width="1917" height="972" alt="Screenshot 2026-09-18 015458" src="https://github.com/user-attachments/assets/c9a97df1-7a2e-43ff-974c-586a3a712526" />
 
+
+---
 ## 📌 Project Status
 
 **🚧 Hackathon Prototype / Research Project**
