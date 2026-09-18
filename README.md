@@ -431,8 +431,6 @@ DBPTBS/
 └── README.md
 ```
 
-> Update this section to match the actual folders in your implementation.
-
 ---
 
 # 🚀 Future Scope
