@@ -25,11 +25,13 @@ The system is designed to detect potentially unauthorized transactions **before 
 
 <b>2. Run the commands as following</b>
 
+ ```cd DBPTBS-System ```
+
  ```python -m venv .venv```
  
 ```.venv\Scripts\activate```
 
-``` pip install -r requirements.txt```
+```pip install -r requirements.txt```
 
 ```streamlit run dashboard.py```
 
@@ -43,11 +45,13 @@ The system is designed to detect potentially unauthorized transactions **before 
 
 <b>2. Run the commands as following</b>
 
+ ```cd DBPTBS-System ```
+
  ```python3 -m venv .venv```
 
 ```source .venv/bin/activate ```
 
-``` pip install -r requirements.txt ```
+```pip install -r requirements.txt ```
 
 ```streamlit run dashboard.py ```
 
