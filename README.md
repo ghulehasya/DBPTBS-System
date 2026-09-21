@@ -9,6 +9,51 @@ DBPTBS is a **behavioural authentication and risk-assessment security layer for 
 The system is designed to detect potentially unauthorized transactions **before they are executed on the blockchain**.
 
 ---
+## 🚀 How to Run
+
+<details>
+<summary><b>Click here to see installation & run instructions</b></summary>
+
+### 🪟Windows
+
+```bash```
+
+<b>1. Clone the repo</b> 
+
+```git clone https://github.com/ghulehasya/DBPTBS-System.git```
+
+
+<b>2. Run the commands as following</b>
+
+ ```python -m venv .venv```
+ 
+```.venv\Scripts\activate```
+
+``` pip install -r requirements.txt```
+
+```streamlit run dashboard.py```
+
+---
+
+### 🍎macOS / 🐧Linux
+
+<b>1. Clone the repo</b> 
+
+```git clone https://github.com/ghulehasya/DBPTBS-System.git```
+
+<b>2. Run the commands as following</b>
+
+ ```python3 -m venv .venv```
+
+```source .venv/bin/activate ```
+
+``` pip install -r requirements.txt ```
+
+```streamlit run dashboard.py ```
+
+</details>
+
+---
 
 ## 🔴 Problem Statement
 
