@@ -60,6 +60,8 @@ Proceed      Block / Verify           │
 Blockchain   Additional Auth          │
 ```
 
+<img width="1917" height="972" alt="Screenshot 2026-09-18 015131" src="https://github.com/user-attachments/assets/f7655465-eb00-4f26-b81d-869264c7180e" />
+
 ---
 
 # 🧬 Digital DNA
@@ -81,6 +83,7 @@ Depending on the implementation and available data, DBPTBS can analyze signals s
 | 🌐 Session Context        | Contextual session characteristics      |
 
 These signals are combined rather than relying on a single indicator.
+<img width="1917" height="971" alt="Screenshot 2026-09-18 015326" src="https://github.com/user-attachments/assets/c706106e-c233-4a15-8456-4395101ae4eb" />
 
 ---
 
@@ -152,6 +155,7 @@ Contextual Deviation
                        ↓              ↓
                    Proceed         Block
 ```
+<img width="1916" height="971" alt="Screenshot 2026-09-18 015349" src="https://github.com/user-attachments/assets/7401727a-f3cf-41e0-a682-714ca18411d4" />
 
 ---
 
@@ -192,8 +196,9 @@ Verified Owner     Verification Failed
  ↓                     ↓
 Transaction          Transaction
 Allowed              Blocked
-```
 
+```
+<img width="1917" height="970" alt="Screenshot 2026-09-18 015421" src="https://github.com/user-attachments/assets/a7fcc5b9-8cfa-4cb2-8b4f-f0c793c47777" />
 ---
 
 # ⚡ What Makes DBPTBS Different?
@@ -426,8 +431,6 @@ DBPTBS/
 └── README.md
 ```
 
-> Update this section to match the actual folders in your implementation.
-
 ---
 
 # 🚀 Future Scope
@@ -474,8 +477,17 @@ DBPTBS aims to move blockchain transaction protection from **transaction-only ve
           SECURE EXECUTION
 ```
 
----
+--- 
+## 📸 Screen Shots
+<img width="1917" height="972" alt="Screenshot 2026-09-18 015131" src="https://github.com/user-attachments/assets/fe04ce52-228f-4df6-92c6-48f619559d2c" />
+<img width="1917" height="971" alt="Screenshot 2026-09-18 015326" src="https://github.com/user-attachments/assets/ea3e3f7d-6aa5-43ca-9f53-c80409e95920" />
+<img width="1916" height="971" alt="Screenshot 2026-09-18 015349" src="https://github.com/user-attachments/assets/1b876625-7b0d-48ed-9b27-01440e71316c" />
+<img width="1917" height="970" alt="Screenshot 2026-09-18 015421" src="https://github.com/user-attachments/assets/64cf694f-3b01-4569-9a37-a89ff5d11b67" />
+<img width="1917" height="971" alt="Screenshot 2026-09-18 015442" src="https://github.com/user-attachments/assets/e6e6f4d2-ecfc-4927-8f2a-760ba6422183" />
+<img width="1917" height="972" alt="Screenshot 2026-09-18 015458" src="https://github.com/user-attachments/assets/c9a97df1-7a2e-43ff-974c-586a3a712526" />
 
+
+---
 ## 📌 Project Status
 
 **🚧 Hackathon Prototype / Research Project**
