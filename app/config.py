@@ -61,3 +61,22 @@ DEMO_MAX_VERIFICATION_ATTEMPTS = 3
 # Toy proof-of-work difficulty for the blockchain simulator. Kept tiny on
 # purpose: this is a pedagogical chain-linkage demo, not a consensus system.
 BLOCKCHAIN_DIFFICULTY_PREFIX = "00"
+
+# ---------------------------------------------------------------------------
+# API hardening (demo-grade, not a substitute for real production auth)
+# ---------------------------------------------------------------------------
+# Origins allowed to call the API from a browser. Kept as an explicit list
+# instead of "*" so a random third-party page can't drive the API using a
+# visitor's browser session. Add your deployed dashboard's origin here too.
+ALLOWED_ORIGINS = [
+    "http://localhost:8501",   # default Streamlit port
+    "http://127.0.0.1:8501",
+    "http://localhost:8000",   # FastAPI's own /docs, same-origin anyway
+    "http://127.0.0.1:8000",
+]
+
+# Simple fixed-window per-IP rate limit, enforced in-process (no extra
+# dependency). Generous enough not to interfere with normal demo use or the
+# test suite, tight enough to stop naive request flooding.
+RATE_LIMIT_MAX_REQUESTS = 120
+RATE_LIMIT_WINDOW_SECONDS = 60

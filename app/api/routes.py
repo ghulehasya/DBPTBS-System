@@ -8,16 +8,19 @@ result.
 
 from __future__ import annotations
 
+import time
 from datetime import datetime
 
 from fastapi import APIRouter, HTTPException
 
 from app import database as db
 from app import engine
+from app.config import DEMO_OTP_TTL_SECONDS
 from app.models import (
     BlockchainResponse,
     BlockOut,
     DashboardStatsResponse,
+    DemoOtpResponse,
     DnaProfileResponse,
     LoginRequest,
     LoginResponse,
@@ -28,6 +31,7 @@ from app.models import (
     TransactionVerifyRequest,
     TransactionVerifyResponse,
 )
+from app.services.auth_challenge import demo_challenge_store
 
 router = APIRouter()
 
@@ -85,8 +89,20 @@ def analyze_transaction(payload: TransactionAnalyzeRequest):
         behavioural_similarity_pct=outcome.assessment.behavioural_similarity_pct,
         components=[RiskComponentOut(**c.__dict__) for c in outcome.assessment.components],
         reasons=outcome.assessment.reasons,
-        otp_code_for_demo=outcome.otp_code_for_demo,
     )
+
+
+@router.get("/transaction/{tx_id}/demo-otp", response_model=DemoOtpResponse)
+def get_demo_otp(tx_id: str):
+    """PROTOTYPE ONLY - stands in for an out-of-band channel (authenticator
+    app push / SMS) that a real system would use to deliver a step-up
+    code. Kept as a separate call from /transaction/analyze so the code is
+    never returned in the same response that triggered the challenge."""
+    challenge = demo_challenge_store.get(tx_id)
+    if challenge is None:
+        raise HTTPException(404, "No outstanding verification challenge for this transaction.")
+    remaining = max(0, int(DEMO_OTP_TTL_SECONDS - (time.time() - challenge.issued_at)))
+    return DemoOtpResponse(tx_id=tx_id, code=challenge.code, expires_in_seconds=remaining)
 
 
 @router.post("/transaction/verify", response_model=TransactionVerifyResponse)
@@ -135,7 +151,6 @@ def simulate_attack(user_id: str = "USR001"):
         behavioural_similarity_pct=outcome.assessment.behavioural_similarity_pct,
         components=[RiskComponentOut(**c.__dict__) for c in outcome.assessment.components],
         reasons=outcome.assessment.reasons,
-        otp_code_for_demo=outcome.otp_code_for_demo,
     )
 
 

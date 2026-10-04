@@ -69,8 +69,42 @@ def get_conn() -> Iterator[sqlite3.Connection]:
 
 
 def init_db() -> None:
+    """Create tables if they don't exist yet. Idempotent and non-destructive
+    - safe to call every time a user session bootstraps."""
     with get_conn() as conn:
         conn.executescript(SCHEMA)
+
+
+def wipe_all_data() -> None:
+    """Delete every row from every table (schema stays intact). This is
+    what guarantees a transaction recorded in one run is never still
+    sitting in the .sqlite3 file the next time the app starts, and never
+    ends up inside a copy of the project someone else downloads."""
+    with get_conn() as conn:
+        conn.executescript(
+            "DELETE FROM transactions;"
+            "DELETE FROM security_events;"
+            "DELETE FROM behavioral_profiles;"
+            "DELETE FROM users;"
+        )
+
+
+_fresh_start_done = False
+
+
+def ensure_fresh_start() -> None:
+    """Wipe any leftover demo data exactly once per process lifetime, then
+    make sure the schema exists. Call this from every entrypoint (the
+    FastAPI startup hook, the Streamlit script) instead of init_db()
+    directly, so closing and reopening the app always starts empty -
+    regardless of how many times a Streamlit rerun re-executes this
+    module's importer in between."""
+    global _fresh_start_done
+    if _fresh_start_done:
+        return
+    init_db()
+    wipe_all_data()
+    _fresh_start_done = True
 
 
 # ---------------------------------------------------------------------------

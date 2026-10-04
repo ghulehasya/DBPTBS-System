@@ -12,12 +12,12 @@ from __future__ import annotations
 
 from dataclasses import dataclass, field
 from datetime import datetime, timezone
-from typing import Dict, List
+from typing import List
 
 import numpy as np
 
 from app.config import RISK_LOW_MAX, RISK_MEDIUM_MAX, RISK_WEIGHTS
-from app.services.anomaly_detector import AnomalyDetector, AnomalyResult
+from app.services.anomaly_detector import AnomalyResult
 from app.services.dna_engine import DigitalDNA
 
 

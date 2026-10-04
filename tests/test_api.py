@@ -70,13 +70,24 @@ class TestTransactionEndpoints(unittest.TestCase):
         self.assertEqual(resp.status_code, 200)
         body = resp.json()
         self.assertEqual(body["status"], "HELD_FOR_VERIFICATION")
-        self.assertIsNotNone(body["otp_code_for_demo"])
+        # The step-up code must NOT be in the same response that triggered
+        # the challenge - it's fetched separately, simulating an
+        # out-of-band channel (see /transaction/{tx_id}/demo-otp).
+        self.assertNotIn("otp_code_for_demo", body)
+
+        otp_resp = client.get(f"/transaction/{body['tx_id']}/demo-otp")
+        self.assertEqual(otp_resp.status_code, 200)
+        code = otp_resp.json()["code"]
 
         verify_resp = client.post("/transaction/verify", json={
-            "user_id": "APITESTUSR5", "tx_id": body["tx_id"], "code": body["otp_code_for_demo"],
+            "user_id": "APITESTUSR5", "tx_id": body["tx_id"], "code": code,
         })
         self.assertEqual(verify_resp.status_code, 200)
         self.assertTrue(verify_resp.json()["verified"])
+
+    def test_demo_otp_404_for_unknown_transaction(self):
+        resp = client.get("/transaction/not-a-real-tx-id/demo-otp")
+        self.assertEqual(resp.status_code, 404)
 
 
 class TestBlockchainEndpoints(unittest.TestCase):

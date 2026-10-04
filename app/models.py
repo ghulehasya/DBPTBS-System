@@ -51,9 +51,15 @@ class TransactionAnalyzeResponse(BaseModel):
     behavioural_similarity_pct: float
     components: List[RiskComponentOut]
     reasons: List[str]
-    otp_code_for_demo: Optional[str] = Field(
-        None, description="PROTOTYPE ONLY: a real system would deliver this over an out-of-band channel, never in the API response."
-    )
+    # Deliberately does NOT include the step-up code. A held transaction's
+    # code is fetched separately via GET /transaction/{tx_id}/demo-otp,
+    # standing in for a real out-of-band channel - see DemoOtpResponse.
+
+
+class DemoOtpResponse(BaseModel):
+    tx_id: str
+    code: str = Field(..., description="PROTOTYPE ONLY: a real system would deliver this over a genuine out-of-band channel (push/SMS/authenticator), never over the same API a caller controls.")
+    expires_in_seconds: int
 
 
 class TransactionVerifyRequest(BaseModel):

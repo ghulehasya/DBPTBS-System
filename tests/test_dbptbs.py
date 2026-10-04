@@ -16,7 +16,7 @@ import unittest
 from datetime import datetime
 
 from app.services.synthetic_data import new_demo_user
-from app.services.dna_engine import build_digital_dna, adapt_baseline, event_to_vector
+from app.services.dna_engine import build_digital_dna, adapt_baseline
 from app.services.anomaly_detector import build_and_fit_detector
 from app.services.risk_engine import assess_transaction
 from app.services.blockchain import Blockchain, hash_transaction

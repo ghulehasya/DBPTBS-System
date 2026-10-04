@@ -15,7 +15,7 @@ from __future__ import annotations
 import hashlib
 import json
 import time
-from dataclasses import asdict, dataclass, field
+from dataclasses import asdict, dataclass
 from typing import List, Optional
 
 from app.config import BLOCKCHAIN_DIFFICULTY_PREFIX

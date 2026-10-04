@@ -1,48 +1,8 @@
-# Python
 __pycache__/
-*.py[cod]
-*.pyo
-
-# Virtual environments
-venv/
+*.pyc
+data/*.sqlite3
 .venv/
-env/
-ENV/
-
-# Environment variables / secrets
+venv/
 .env
-.env.*
-!.env.example
-
-# Testing
-.pytest_cache/
-.coverage
-htmlcov/
-
-# IDEs / editors
-.vscode/
-.idea/
-
-# OS files
-.DS_Store
-Thumbs.db
-
-# Logs
-*.log
-
-# Local databases
-*.db
-*.sqlite
-*.sqlite3
-
-# Build / packaging
-build/
-dist/
 *.egg-info/
-
-# Jupyter
-.ipynb_checkpoints/
-
-# Temporary files
-*.tmp
-*.temp
+.pytest_cache/
