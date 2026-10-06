@@ -541,7 +541,5 @@ DBPTBS is a conceptual and prototype security framework demonstrating how behavi
 
 ---
 
-## 👥 Contributors
-
-1. Hasya Ghule
-2. Avdhut Parvate
+## 👥 Contributor
+Hasya Ghule
